@@ -1,3 +1,3 @@
-import StartCrawler from './crawler'
+import startCrawler from './crawler'
 
-StartCrawler("3c");
+startCrawler("buyonline");
