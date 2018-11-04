@@ -4,6 +4,5 @@
 
 ### 執行函數
 
-    StartCrawler(forum);
-    
+    startCrawler(forum);
     forum = 討論區代號
