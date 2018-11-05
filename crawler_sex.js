@@ -38,11 +38,16 @@ const getImage = async url => {
       .toString(36)
       .substring(7) + ".jpg"
   );
-  const getImage = await axios.get(url, {
-    responseType: "stream"
-  });
-  await getImage.data.pipe(fs.createWriteStream(paths));
-  await console.log("Save Success! ", "Time:", new Date().toTimeString().split(" ")[0]);
+
+  try {
+    const getImageRequest = await axios.get(url, {
+      responseType: "stream"
+    });
+    await getImageRequest.data.pipe(fs.createWriteStream(paths));
+    await console.log("Save Success! ", "Time:", new Date().toTimeString().split(" ")[0]);
+  } catch (error) {
+    console.log("TCL: }catch -> error", error);
+  }
 };
 
 const startCrawler = () => {
