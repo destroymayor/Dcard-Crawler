@@ -8,7 +8,7 @@ const getFirstArticleCode = async forum => {
     const $ = cheerio.load(ResponseHTML.data);
 
     const articleCodeList = [];
-    await $(".PostList_wrapper_2BLUM > a").each((index, value) => {
+    await $(".PostList_entry_1rq5Lf > div > a").each((index, value) => {
       const ArticleCode = $(value)
         .attr("href")
         .match(new RegExp("f\\/" + forum + "\\/p\\/\\d+", "g"))[0]
