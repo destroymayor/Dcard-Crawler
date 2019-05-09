@@ -1,6 +1,12 @@
-import startCrawler from "./crawler";
+const startCrawler = require("./crawler");
+const crawler_sex = require("./crawler_sex");
+const program = require("commander");
 
-import crawler_sex from "./crawler_sex"; // 西斯板爬圖片
+const forum = (value, dummyPrevious) => value;
 
-//startCrawler("3c");
-crawler_sex();
+program.option("-f, --forum <string>", "論壇代碼", forum).parse(process.argv);
+
+if (program.forum !== undefined) {
+  console.log(`論壇代碼 ${program.forum}`);
+  startCrawler(program.forum);
+}

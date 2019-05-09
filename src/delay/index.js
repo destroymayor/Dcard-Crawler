@@ -1,3 +1,3 @@
 const delay = ms => new Promise(r => setTimeout(r, ms));
 
-export default delay;
+module.exports = delay;
